@@ -19,14 +19,7 @@ int main(int argc, char** argv) {
          << "Your C++ version is " << __cplusplus << endl
          << "Implemented by Amir Mehrafsa (mehrafsa@live.com)" << endl
          << "Usage :" << endl
-         << pr << " [amount of spaghetti in minutes(=1)]" << endl;
-
-    // default duration of spaghetti bowl
-    chrono::duration<size_t, nano> duration = 1min;
-    if(argc > 1 ) {
-        duration = chrono::minutes(atol(argv[1]));
-    }
-
+         << pr << endl;
 
     ingredients ings;
 
