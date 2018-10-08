@@ -10,4 +10,10 @@ LIBS += -lpthread
 
 
 SOURCES += \
-    Barbershop.cpp
+    FIFOBarbershop.cpp \
+    barber.cpp \
+    customer.cpp
+
+HEADERS += \
+    barber.h \
+    customer.h
