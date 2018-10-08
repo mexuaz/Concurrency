@@ -27,22 +27,15 @@ int main(int /*argc*/, char** argv) {
     mt19937 generator(rd());
     uniform_int_distribution<size_t> dist_customer_stopby(2000, 4000);
 
-
     Barber barber;
     thread th(&Barber::operator(), &barber);
-
 
     while(true) {
         barber.new_customer(make_shared<Customer>());
         this_thread::sleep_for(chrono::milliseconds(dist_customer_stopby(generator)));
     }
 
-
-
     th.join();
-
-
-
 
     return 0;
 }
