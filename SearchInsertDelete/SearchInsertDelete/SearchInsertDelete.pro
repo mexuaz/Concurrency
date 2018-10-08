@@ -10,4 +10,8 @@ LIBS += -lpthread
 
 
 SOURCES += \
-    SearchInsertDelete.cpp
+    SearchInsertDelete.cpp \
+    sidlist.cpp
+
+HEADERS += \
+    sidlist.h
