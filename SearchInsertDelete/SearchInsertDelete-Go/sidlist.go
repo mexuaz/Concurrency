@@ -84,6 +84,7 @@ func (e SIDList) del(idx int, wg *sync.WaitGroup) bool {
 	}
 	numConcurrentDels++
 	e.print_status()
+	cond.L.Unlock()
 	time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 	//e.list = append(e.list[:idx], e.list[idx+1:]...)
 	cond.L.Lock()
