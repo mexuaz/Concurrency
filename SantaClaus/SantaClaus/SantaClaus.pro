@@ -10,4 +10,12 @@ LIBS += -lpthread
 
 
 SOURCES += \
-    SantaClaus.cpp
+    SantaClaus.cpp \
+    santa.cpp \
+    deer.cpp \
+    elve.cpp
+
+HEADERS += \
+    santa.h \
+    deer.h \
+    elve.h
