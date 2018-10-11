@@ -12,6 +12,7 @@ void smoker::make_cigarettes()
 
 void smoker::smoke()
 {
+    cout << "Somker#" << m_id << " is smoking!" << endl;
     // Sleeps thread for random miliseconds (smoking time)
     auto t(chrono::milliseconds(m_dist_smoke(m_gen)));
     this_thread::sleep_for(t);
@@ -32,8 +33,6 @@ void smoker::operator()()
     while(true) {
         mp_external_supply->wait_for_complete_with_internal_supply(m_infinite_supply);
         this->make_cigarettes();
-
-        cout << "Somker#" << m_id << " is smoking!" << endl;
         this->smoke();
     }
 }

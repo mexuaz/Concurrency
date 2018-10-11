@@ -23,9 +23,11 @@ func makeSIDList(list []int) SIDList {
 }
 
 func (e SIDList) search(value int, wg *sync.WaitGroup) int {
-	if wg != nil {
-		defer wg.Done()
-	}
+	defer func() {
+		if wg != nil {
+			wg.Done()
+		}
+	}()
 	cond.L.Lock()
 	for numConcurrentDels > 0 {
 		cond.Wait()
@@ -51,9 +53,11 @@ func (e SIDList) search(value int, wg *sync.WaitGroup) int {
 }
 
 func (e SIDList) insert(value int, wg *sync.WaitGroup) {
-	if wg != nil {
-		defer wg.Done()
-	}
+	defer func() {
+		if wg != nil {
+			wg.Done()
+		}
+	}()
 	cond.L.Lock()
 	for numConcurrentDels > 0 || numConcurrentInsertes > 0 {
 		cond.Wait()
@@ -70,10 +74,13 @@ func (e SIDList) insert(value int, wg *sync.WaitGroup) {
 }
 
 func (e SIDList) del(idx int, wg *sync.WaitGroup) bool {
-	if wg != nil {
-		defer wg.Done()
-	}
+	defer func() {
+		if wg != nil {
+			wg.Done()
+		}
+	}()
 	if idx > len(e.list) {
+
 		return false
 	}
 	cond.L.Lock()
@@ -86,7 +93,7 @@ func (e SIDList) del(idx int, wg *sync.WaitGroup) bool {
 	e.print_status()
 	cond.L.Unlock()
 	time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
-	//e.list = append(e.list[:idx], e.list[idx+1:]...)
+	e.list = append(e.list[:idx], e.list[idx+1:]...)
 	cond.L.Lock()
 	numConcurrentDels--
 	cond.L.Unlock()

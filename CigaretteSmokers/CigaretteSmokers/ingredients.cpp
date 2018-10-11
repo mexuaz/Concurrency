@@ -2,10 +2,7 @@
 
 using namespace std;
 
-ingredients::ingredients(bool tabacco /*= false*/, bool paper /*= false*/, bool matches /*= false*/)
-    : m_tabacco(tabacco)
-    , m_paper(paper)
-    , m_matches(matches)
+ingredients::ingredients()
 {
 
 }

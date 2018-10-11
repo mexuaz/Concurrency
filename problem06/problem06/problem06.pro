@@ -6,6 +6,7 @@ CONFIG -= qt
 
 QMAKE_CXXFLAGS += -std=c++17
 
+LIBS += -lpthread
 
 SOURCES += \
-        main.cpp
+    problem06.cpp

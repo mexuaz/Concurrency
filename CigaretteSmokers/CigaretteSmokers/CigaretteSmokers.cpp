@@ -9,7 +9,7 @@
 
 using namespace std;
 
-int main(int argc, char** argv) {
+int main(int /*argc*/, char** argv) {
 
     std::string pr(argv[0]);
     pr.erase(0, pr.find_last_of('/')+1);

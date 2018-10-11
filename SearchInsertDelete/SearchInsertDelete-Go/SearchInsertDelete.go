@@ -14,9 +14,9 @@ func main() {
 	wg.Add(3)
 	for {
 		time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
-		go sidls.search(rand.Intn(1e7), nil)
-		go sidls.insert(rand.Intn(1e7), nil)
-		go sidls.del(rand.Intn(1e7), nil)
+		go sidls.search(rand.Intn(1e7), &wg)
+		go sidls.insert(rand.Intn(1e7), &wg)
+		go sidls.del(rand.Intn(1e7), &wg)
 	}
 	wg.Wait()
 

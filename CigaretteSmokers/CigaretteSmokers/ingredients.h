@@ -28,7 +28,7 @@ public:
 
 
 public:
-    ingredients(bool tabacco = false, bool paper = false, bool matches = false);
+    ingredients();
 
 
     void wait_for_complete_with_internal_supply(infinit_t internal_supply);

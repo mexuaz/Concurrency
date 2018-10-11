@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
          << "Usage :" << endl
          << pr << " [size of list (=1e7)]" << endl;
 
-    // default duration of spaghetti bowl
+    // default size of list
     size_t sz = 1e7;
     if(argc > 1 ) {
         stringstream(argv[1]) >> sz;
