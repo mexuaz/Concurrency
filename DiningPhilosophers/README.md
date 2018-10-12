@@ -24,17 +24,27 @@ Also amount of time each philosopher spend on the bowl is measured so this way w
 Here is a sample output of the program:
 
 > Concurrent philosophers: 4 and spaghetti left 59 secs
+
 > Concurrent philosophers: 4 and spaghetti left 40 secs
+
 > Concurrent philosophers: 4 and spaghetti left 22 secs
-> 
+
 > Philosopher 2 finished eating Spend 17 secs in 1 attempts on dining.
+
 > Philosopher 1 finished eating Spend 18 secs in 1 attempts on dining.
+
 > Philosopher 4 finished eating Spend 9 secs in 1 attempts on > dining.
+
 > Philosopher 3 finished eating Spend 14 secs in 2 attempts on dining.
+
 > Philosopher 0 finished eating Spend 9 secs in 1 attempts on dining.
+
 > The total amount of spaghetti was: 60 secs
+
 > The amount spend on spaghetti was: 28 secs
+
 > Performance: Program runs 2.14286x times faster than its sequential version.
+
 > Program Ended without deadlock :-)
 
 This is sample output for multiplex version you can see the that the bowl of spaghetti consumed more than 2 times faster. However the amount each philosopher spend on the bowl was not equal. philosopher 1 and 2 dined almost twice more than philosopher 0 and 4 which means not a good result for resource starvation.
