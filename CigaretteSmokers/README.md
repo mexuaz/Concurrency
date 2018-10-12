@@ -7,8 +7,14 @@ Four threads are involved: an agent and three smokers. The smokers loop forever,
 The agent repeatedly chooses two different ingredients at random and makes them available to the smokers. Depending on which ingredients are chosen, the smoker with the complementary ingredient should pick up both resources and proceed.
 
 
-The interseting version constaring:
+The interesting version constrain:
 * You are not allowed to modify the agent code.
+
+## Performance evaluation
+There should be always at least one smoker smoking. If the agent is fast enough it would be possible to have more than one smoker.
+
+You can change the random sleep time within the program and verify that this is possible with this implementation
+
 
 
 

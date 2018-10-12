@@ -10,9 +10,14 @@ To allow Santa to get some sleep, the elves can only wake him when three of them
 wait in a warming hut before being harnessed to the sleigh.
 
 The program should satisfies the following constraints:
-* After the ninth reindeer arrives, Santa must invoke prepareSleigh, and then all nine reindeer must invoke getHitched.
+* After the ninth reindeer arrives, Santa must invoke prepare Sleigh, and then all nine reindeer must invoke getHitched.
 * After the third elf arrives, Santa must invoke helpElves. Concurrently, all three elves should invoke getHelp.
 * All three elves must invoke getHelp before any additional elves enter (increment the elf counter).
+
+## Performance Evalution
+
+Santa Claus should not be asleep when all the deers have returned or three elves are waiting.
+
 
 
 
