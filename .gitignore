@@ -1,5 +1,7 @@
 # Project Specific
-/network-data
+# binary executable without extension
+*
+!*.*
 
 # C++ objects and libs
 
