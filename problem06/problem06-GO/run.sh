@@ -1,6 +1,7 @@
 #!/bin/bash
-./problem06-GO 2 100000000 >> out.txt
-./problem06-GO 4 100000000 >> out.txt
-./problem06-GO 8 100000000 >> out.txt
-./problem06-GO 16 100000000 >> out.txt
-./problem06-GO 32 100000000 >> out.txt
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+for i in 1 2 4 8 16 32 64
+	do 
+		echo Running with spilits: $i and size: 100000000
+		"$DIR/problem06-GO" $i 100000000 >> "$DIR/out.txt"
+	done
