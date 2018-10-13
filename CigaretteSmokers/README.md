@@ -46,6 +46,6 @@ Sample output of the program:
 
 
 
-[book_semaphores]: greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
+[book_semaphores]: http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
 
 
