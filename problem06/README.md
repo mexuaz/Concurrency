@@ -14,7 +14,7 @@ C++ performance measure in different level of optimization. Since there were no 
 
 
 
-| splits  |  C++  |  C++  |  C++  |  C++  |   Go  |
+| splits  |  C++ O  |  C++ O1 |  C++ O2  |  C++ O3  |   Go  |
 |:-------:|:-----:|:-----:|:-----:|:-----:|:-----:|
 | 1       | 11616 | 11606 | 11423 | 11819 | 40006 |
 | 2       | 7749  | 7883  | 7510  | 7741  | 26081 |
