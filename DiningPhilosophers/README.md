@@ -28,7 +28,7 @@ Here is a sample output of the program:
 > Concurrent philosophers: 4 and spaghetti left 22 secs\
 > Philosopher 2 finished eating Spend 17 secs in 1 attempts on dining.\
 > Philosopher 1 finished eating Spend 18 secs in 1 attempts on dining.\
-> Philosopher 4 finished eating Spend 9 secs in 1 attempts on > dining.\
+> Philosopher 4 finished eating Spend 9 secs in 1 attempts on  dining.\
 > Philosopher 3 finished eating Spend 14 secs in 2 attempts on dining.\
 > Philosopher 0 finished eating Spend 9 secs in 1 attempts on dining.\
 > The total amount of spaghetti was: 60 secs\

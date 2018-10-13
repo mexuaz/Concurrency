@@ -15,6 +15,35 @@ If there is no delete and all search process should be working simultaneously as
 
 When you monitor the output you could see that this happening.
 
+This is a sample output of the problem (attention that no error is caught):
+
+Initialization complete!
+> Searches: 0, Inserts: 0, Deletes: 1\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 0, Inserts: 0, Deletes: 1\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 2, Inserts: 1, Deletes: 0\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 0, Inserts: 0, Deletes: 1\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 0, Inserts: 0, Deletes: 1\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 0, Inserts: 0, Deletes: 1\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 0, Inserts: 0, Deletes: 1\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 2, Inserts: 1, Deletes: 0\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 3, Inserts: 1, Deletes: 0\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 3, Inserts: 1, Deletes: 0\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 3, Inserts: 1, Deletes: 0\
+> **We are good (just to make sure things like this happens)**\
+> Searches: 0, Inserts: 0, Deletes: 1\
+> **We are good (just to make sure things like this happens)**\
+
+
 [book_semaphores]: greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
 
 
