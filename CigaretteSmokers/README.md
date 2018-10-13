@@ -14,6 +14,33 @@ The interesting version constrain:
 There should be always at least one smoker smoking. If the agent is fast enough it would be possible to have more than one smoker.
 
 You can change the random sleep time within the program and verify that this is possible with this implementation
+As you can see based on the smoker smoking and agent supply speed  it is possible for concurrent smoking. For maximum concurrency to happen agent speed should be lower than smokers.
+
+Sample output of the program:
+
+> Agent supplied: paper and matches\
+> Somker#0 started smoking!\
+> Agent supplied: tabacco and paper\
+> Somker#2 started smoking!\
+> Somker#0 finished smoking!\
+> Somker#2 finished smoking!\
+> Agent supplied: paper and matches\
+> Somker#0 started smoking!\
+> Agent supplied: paper and matches\
+> Somker#0 finished smoking!\
+> Somker#0 started smoking!\
+> Agent supplied: tabacco and matches\
+> Somker#1 started smoking!\
+> Somker#0 finished smoking!\
+> Agent supplied: tabacco and paper\
+> Somker#2 started smoking!\
+> Somker#1 finished smoking!\
+> Somker#2 finished smoking!\
+> Agent supplied: tabacco and matches\
+> Somker#1 started smoking!\
+> Somker#1 finished smoking!\
+> Agent supplied: paper and matches\
+> Somker#0 started smoking!\
 
 
 

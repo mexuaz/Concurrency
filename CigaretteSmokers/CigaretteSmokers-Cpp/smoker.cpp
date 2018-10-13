@@ -12,10 +12,11 @@ void smoker::make_cigarettes()
 
 void smoker::smoke()
 {
-    cout << "Somker#" << m_id << " is smoking!" << endl;
+    cout << "Somker#" << m_id << " started smoking!" << endl;
     // Sleeps thread for random miliseconds (smoking time)
     auto t(chrono::milliseconds(m_dist_smoke(m_gen)));
     this_thread::sleep_for(t);
+     cout << "Somker#" << m_id << " finished smoking!" << endl;
 }
 
 smoker::smoker(size_t id, ingredients::infinit_t infinite_supply, ingredients *external_supply)
@@ -23,7 +24,7 @@ smoker::smoker(size_t id, ingredients::infinit_t infinite_supply, ingredients *e
     , m_infinite_supply(infinite_supply)
     , mp_external_supply(external_supply)
     , m_gen(random_device()())
-    , m_dist_smoke(100, 3000)
+    , m_dist_smoke(1000, 5000)
 {
 
 }
