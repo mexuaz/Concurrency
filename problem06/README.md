@@ -35,6 +35,8 @@ C++ performance measure in different level of optimization. Since there were no 
 
 * Optimization doesn't contribute much to C++ except in case of increased thread numbers.
 
+* Multi-threading improved C++ time in best case 47% at the same time this percentage for Go is  42%
+
 
 If you look at the source code the Go implementation is similar to C++ one this means C++ was faster for this problem.
 
