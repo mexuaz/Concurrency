@@ -9,17 +9,18 @@ std::atomic<bool> elve::s_elves_are_with_santa = false;
 
 void elve::make_toys()
 {
-    this_thread::sleep_for(chrono::milliseconds(m_dist(m_gen)));
+    this_thread::sleep_for(chrono::milliseconds(m_distMakeToys(m_gen)));
 }
 
 void elve::solve_problem()
 {
-    this_thread::sleep_for(chrono::milliseconds(m_dist(m_gen)));
+    this_thread::sleep_for(chrono::milliseconds(m_distMakeToys(m_gen)));
 }
 
 elve::elve(mutex *mt, condition_variable *cv)
     : m_gen(random_device{}())
-    , m_dist(100, 5000)
+    , m_distMakeToys(5000, 7000)
+    , m_distSolverProblem(100, 1000)
     , mp_mt(mt)
     , mp_cv(cv)
 {

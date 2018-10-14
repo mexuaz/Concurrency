@@ -71,5 +71,7 @@ void santa::operator()()
             cout << "done!" << endl;
             mp_cv->notify_all();
         }
+
+        cout << "Santa is back to sleep ..." << endl;
     }
 }

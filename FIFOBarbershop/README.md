@@ -15,6 +15,6 @@ In order to implement this problem a thread safe queue has been implemented firs
 
 
 
-[book_semaphores]: greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
+[book_semaphores]: http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
 
 

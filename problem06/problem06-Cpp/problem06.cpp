@@ -73,9 +73,11 @@ int main(int argc, char** argv) {
     lss[static_cast<size_t>(nSplits-1)] =  decltype (ilist)(ilist.begin()+(nSplits-1)*div, ilist.end()); // this is better instead of having if-else in the for-loop
 
 
-    vector<shared_ptr<thread>> ths;
+    vector<shared_ptr<thread>> ths(lss.size());
+    auto th = ths.begin();
     for(auto& ls : lss) {
-        ths.push_back(make_shared<thread>([&](){sort(ls.begin(), ls.end());}));
+        *th = make_shared<thread>([&](){sort(ls.begin(), ls.end());});
+        th++;
     }
 
     for(auto& th : ths) {
@@ -88,7 +90,7 @@ int main(int argc, char** argv) {
 
     while(lss.size()>1) {
         for(size_t i = 0; i < lss.size(); i+=2) {
-            vector<int> t;
+            decltype (ilist) t;
             merge(lss[i].begin(), lss[i].end(), lss[i+1].begin(), lss[i+1].end(), std::back_inserter(t));
             results.push_back(t);
         }

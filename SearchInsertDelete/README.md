@@ -44,6 +44,6 @@ Initialization complete!
 > **We are good (just to make sure things like this happens)**\
 
 
-[book_semaphores]: greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
+[book_semaphores]: http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
 
 

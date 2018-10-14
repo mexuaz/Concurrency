@@ -41,6 +41,6 @@ This situation could be controlled by conditional variables as well.
 
 
 
-[book_semaphores]: greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
+[book_semaphores]: http://greenteapress.com/semaphores/LittleBookOfSemaphores.pdf
 
 

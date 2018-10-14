@@ -13,7 +13,8 @@ class elve
     static std::atomic<bool> s_elves_are_with_santa;
 
     std::mt19937 m_gen;
-    std::uniform_int_distribution<size_t> m_dist;
+    std::uniform_int_distribution<size_t> m_distMakeToys;
+    std::uniform_int_distribution<size_t> m_distSolverProblem;
 
     std::mutex* mp_mt;
     std::condition_variable* mp_cv;
