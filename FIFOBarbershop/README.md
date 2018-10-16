@@ -1,5 +1,6 @@
 # The FIFO Barbershop Problem
 
+The problem explanation is adopted from [The Little Book of Semaphores][book_semaphores] 
 A waiting room with n chairs, and the barber room containing the barber chair. If there are no customers to be served, the barber goes to sleep. If a customer enters the barbershop and all chairs are occupied, then the customer leaves the shop. If the barber is busy, but chairs are available, then the customer sits in one of the free chairs. If the barber is asleep, the customer wakes up the barber. The waiting customers should be served in the order they arrive.
 
 This is very interesting problem and has many application in computer you can imagine video stream processing applications. In case of real-time processing if your processing task is too slow you need to drop some frames when the buffer is full. This way you are not delayed by processing. At the same time while your processing task is working the other one is reading the video stream which saves a lot of time.

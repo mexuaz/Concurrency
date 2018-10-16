@@ -9,6 +9,7 @@
 #include <algorithm> // shuffle sort merge
 #include <random>
 #include <chrono>
+#include <utility>
 
 using namespace std;
 
@@ -65,20 +66,19 @@ int main(int argc, char** argv) {
 
     auto start = chrono::high_resolution_clock::now();
 
-    vector<decltype (ilist)> lss(static_cast<size_t>(nSplits));
-
-    for(int i = 0; i < nSplits-1; i++) {
-        lss[static_cast<size_t>(i)]= decltype (ilist)(ilist.begin()+i*div, ilist.begin()+(i+1)*div);
+    vector<pair<int, int>> lss(static_cast<size_t>(nSplits)); // this list stores the start and end positions of list
+    for (int i = 0; i < nSplits-1; i++) {
+        lss[static_cast<size_t>(i)]= make_pair(i*div, (i+1)*div);
     }
-    lss[static_cast<size_t>(nSplits-1)] =  decltype (ilist)(ilist.begin()+(nSplits-1)*div, ilist.end()); // this is better instead of having if-else in the for-loop
+    lss[static_cast<size_t>(nSplits-1)] =  make_pair((nSplits-1)*div, ilist.size()); // this is better instead of having if-else in the for-loop
 
-
-    vector<shared_ptr<thread>> ths(lss.size());
+    vector<shared_ptr<thread>> ths(static_cast<size_t>(nSplits));
     auto th = ths.begin();
-    for(auto& ls : lss) {
-        *th = make_shared<thread>([&](){sort(ls.begin(), ls.end());});
+    for (const auto& l : lss) {
+        *th = make_shared<thread>([&](){sort(ilist.begin()+ l.first, ilist.begin()+ l.second);});
         th++;
     }
+
 
     for(auto& th : ths) {
         if(th->joinable()) {
@@ -86,21 +86,28 @@ int main(int argc, char** argv) {
         }
     }
 
-    vector<decltype (ilist)> results;
+    while(lss.size() > 1) {
 
-    while(lss.size()>1) {
+        decltype (ilist) tilist;
+        decltype (lss) tlss;
+
         for(size_t i = 0; i < lss.size(); i+=2) {
-            decltype (ilist) t;
-            merge(lss[i].begin(), lss[i].end(), lss[i+1].begin(), lss[i+1].end(), std::back_inserter(t));
-            results.push_back(t);
+            auto t = make_pair(tilist.size(), 0);
+            merge(ilist.begin()+lss[i].first, ilist.begin()+lss[i].second, ilist.begin()+lss[i+1].first, ilist.begin()+lss[i+1].second, std::back_inserter(tilist));
+            t.second = int(tilist.size());
+            tlss.push_back(t);
+
         }
+
         lss.clear();
-        swap(lss, results);
+        swap(lss, tlss);
+
+        ilist.clear();
+        swap(ilist, tilist);
     }
 
 
     auto duration = chrono::high_resolution_clock::now() - start;
-
 
     if(verbose) {
         cout << "Number of splits: " << nSplits << ", Size of list: " << ilist.size()
